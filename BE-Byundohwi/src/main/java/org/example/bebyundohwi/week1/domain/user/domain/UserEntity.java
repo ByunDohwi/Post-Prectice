@@ -23,7 +23,7 @@ public class UserEntity {
 
     private String password;
 
-    private LocalDateTime createDate;
+    private String createDate;
 
 
 }
