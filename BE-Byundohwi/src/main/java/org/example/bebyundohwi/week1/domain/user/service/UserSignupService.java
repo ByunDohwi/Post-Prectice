@@ -1,10 +1,9 @@
 package org.example.bebyundohwi.week1.domain.user.service;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserRequest;
+import org.example.bebyundohwi.week1.domain.user.exception.UserNameAlreadyExistException;
 import org.example.bebyundohwi.week1.domain.user.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,7 +21,7 @@ public class UserSignupService {
     public void userSignUpService(UserRequest userRequest) {
         Boolean checkAlreadyUserName = repository.existsByUsername(userRequest.getUsername());
 
-        if(checkAlreadyUserName) {
+        if(!checkAlreadyUserName) {
             {
                 repository.save(
                         UserEntity.builder()
@@ -32,6 +31,8 @@ public class UserSignupService {
                                 .build()
                 );
             }
+        }else{
+            throw UserNameAlreadyExistException.EXCEPTION;
         }
     }
 }

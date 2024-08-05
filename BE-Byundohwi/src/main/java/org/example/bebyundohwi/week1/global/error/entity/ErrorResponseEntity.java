@@ -18,7 +18,6 @@ public class ErrorResponseEntity {
     private LocalDateTime createLocalDateTime;
 
     public static ResponseEntity<ErrorResponseEntity> responseEntity(ErrorCode errorCode) {
-        System.out.println("먀");
         return ResponseEntity
                 .status(errorCode.getHttpStatus())
                 .body(ErrorResponseEntity.builder()

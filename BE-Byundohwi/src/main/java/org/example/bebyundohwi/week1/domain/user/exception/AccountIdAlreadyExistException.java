@@ -8,6 +8,6 @@ public class AccountIdAlreadyExistException extends CustomException {
     public static final CustomException EXCEPTION = new AccountIdAlreadyExistException();
 
     private AccountIdAlreadyExistException() {
-        super(ErrorCode.ACCOUNTID_ALREADY_EXISTS);
+        super(ErrorCode.ACCOUNTED_ALREADY_EXISTS);
     }
 }
