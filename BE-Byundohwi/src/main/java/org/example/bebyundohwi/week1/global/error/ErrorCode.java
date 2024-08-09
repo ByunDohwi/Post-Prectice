@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum ErrorCode {
 
 
-    USER_ALREADY_EXISTS(404, "User Not Found"),
+    USER_ALREADY_EXISTS(409, "Username Already Exists"),
     ACCOUNTED_ALREADY_EXISTS(409, "AccountId Already Exists");
 
     private final Integer httpStatus;

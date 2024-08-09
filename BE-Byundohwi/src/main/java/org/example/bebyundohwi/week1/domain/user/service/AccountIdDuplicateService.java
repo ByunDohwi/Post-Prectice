@@ -5,7 +5,6 @@ import org.example.bebyundohwi.week1.domain.user.exception.AccountIdAlreadyExist
 import org.example.bebyundohwi.week1.domain.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Service
 @RequiredArgsConstructor

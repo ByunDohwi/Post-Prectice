@@ -4,9 +4,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserRequest;
-import org.example.bebyundohwi.week1.domain.user.repository.UserRepository;
-import org.example.bebyundohwi.week1.domain.user.service.AccountIdDuplicateService;
 import org.example.bebyundohwi.week1.domain.user.service.UserSignupService;
+import org.example.bebyundohwi.week1.domain.user.service.AccountIdDuplicateService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,7 +16,7 @@ public class UserController {
     private final UserSignupService userSignupService;
     private final AccountIdDuplicateService accountIdDuplicateService;
 
-    @PostMapping("signup")
+    @PostMapping("/signup")
     @ApiOperation(value = "회원가입")
     public void signup(@RequestBody UserRequest userRequest) {
         userSignupService.userSignUpService(userRequest);
