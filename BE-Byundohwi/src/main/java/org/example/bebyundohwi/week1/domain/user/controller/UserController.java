@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserRequest;
 import org.example.bebyundohwi.week1.domain.user.service.UserSignupService;
 import org.example.bebyundohwi.week1.domain.user.service.AccountIdDuplicateService;
+import org.example.bebyundohwi.week1.global.security.jwt.JwtProperty;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,10 +16,12 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserSignupService userSignupService;
     private final AccountIdDuplicateService accountIdDuplicateService;
+    private final JwtProperty jwtProperty;
 
     @PostMapping("/signup")
     @ApiOperation(value = "회원가입")
     public void signup(@RequestBody UserRequest userRequest) {
+        System.out.println(jwtProperty.getPrefix());
         userSignupService.userSignUpService(userRequest);
     }
 

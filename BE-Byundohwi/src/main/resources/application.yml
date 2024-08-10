@@ -16,14 +16,8 @@ spring:
     open-in-view: false
 
   jwt:
-    secret:  ${JWT_SECRET}
+    jwt-secret:  ${JWT_SECRET}
     header: ${HEADER}
     prefix: ${PREFIX}
-    access-exp: ${ACCESS_EXP}
-    refresh-exp: ${REFRESH_EXP}
-
-  data:
-    redis:
-      port: 6379
-      host: localhost
-
+    accessExp: ${ACCESS_EXP}
+    refreshExp: ${REFRESH_EXP}
