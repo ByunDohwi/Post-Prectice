@@ -1,4 +1,4 @@
-package org.example.bebyundohwi.week1.global.security;
+package org.example.bebyundohwi.week1.global.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
