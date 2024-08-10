@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.bebyundohwi.week1.domain.user.domain.role.Role;
 
-import javax.management.relation.Role;
 import java.time.LocalDateTime;
 
 @Entity
@@ -28,6 +28,8 @@ public class UserEntity {
     @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
+    private Role role;
     private String address;
     private String phone;
     private String createDate;
