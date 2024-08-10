@@ -17,6 +17,10 @@ spring:
 
   jwt:
     secret:  ${JWT_SECRET}
+    header: ${HEADER}
+    prefix: ${PREFIX}
+    access-exp: ${ACCESS_EXP}
+    refresh-exp: ${REFRESH_EXP}
 
   data:
     redis:
