@@ -24,9 +24,9 @@ public class UserController {
 
     @PostMapping("/signup")
     @ApiOperation(value = "회원가입")
-    public void signup(@RequestBody UserSignupRequest userSignupRequest) {
+    public TokenResponse signup(@RequestBody UserSignupRequest userSignupRequest) {
         System.out.println(jwtProperty.getPrefix());
-        userSignupService.userSignUpService(userSignupRequest);
+        return userSignupService.userSignUpService(userSignupRequest);
     }
 
     @PostMapping("/login")
