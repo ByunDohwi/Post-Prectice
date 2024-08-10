@@ -12,11 +12,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
 @Entity
 public class RefreshToken {
     @Id
-    private String accountId;
+    private String username;
 
 
     private String token;

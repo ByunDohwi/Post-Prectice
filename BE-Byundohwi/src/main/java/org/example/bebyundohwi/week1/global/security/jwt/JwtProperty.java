@@ -4,12 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+
+@ConfigurationPropertiesScan
+@ConfigurationProperties(prefix = "spring.jwt")
+@AllArgsConstructor
 @Getter
-@Component
-@ConfigurationProperties(prefix = "jwt")
-@Setter
-public class JwtProperty {
+    public class JwtProperty {
+    private final String jwtSecret;
+    private final Long accessExp;
+    private final Long refreshExp;
+    private final String header;
+    private final String prefix;
 
 }

@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.management.relation.Role;
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,8 +22,14 @@ public class UserEntity {
     @Column(unique = true)
     private String username;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String email;
+
+    private String address;
+    private String phone;
     private String createDate;
 
 
