@@ -8,4 +8,9 @@ import lombok.NoArgsConstructor;
 public class UserLoginRequest {
     private String username;
     private String password;
+
+    public UserLoginRequest(UserSignupRequest request) {
+        this.username = request.getUsername();
+        this.password = request.getPassword();
+    }
 }
