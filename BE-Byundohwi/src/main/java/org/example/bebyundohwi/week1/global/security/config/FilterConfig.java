@@ -2,6 +2,7 @@ package org.example.bebyundohwi.week1.global.security.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.example.bebyundohwi.week1.global.filter.ExceptionFilter;
 import org.example.bebyundohwi.week1.global.filter.JWTokenFilter;
 import org.example.bebyundohwi.week1.global.security.jwt.JwtTokenProvider;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
@@ -17,6 +18,8 @@ public class FilterConfig extends SecurityConfigurerAdapter<DefaultSecurityFilte
     @Override
     public void configure(HttpSecurity builder) throws Exception {
         JWTokenFilter jwTokenFilter = new JWTokenFilter(jwtTokenProvider);
+        ExceptionFilter exceptionFilter = new ExceptionFilter(objectMapper);
         builder.addFilterBefore(jwTokenFilter, UsernamePasswordAuthenticationFilter.class);
+        builder.addFilterBefore(exceptionFilter, JWTokenFilter.class);
     }
 }
