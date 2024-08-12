@@ -48,6 +48,7 @@ public class JwtTokenProvider {
         return new TokenResponse(accessToken, refreshToken, accessExpiredAt, refreshExpiredAt);
     }
 
+
     private String generateToken(String id,String type,String role, Long exp) {
         return Jwts.builder()
                 .setSubject(id)
