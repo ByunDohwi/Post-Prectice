@@ -69,6 +69,17 @@ public class JwtTokenProvider {
         }
     }
 
+    public boolean validToken(String token) {
+        try {
+            Jwts.parser()
+                    .setSigningKey(jwtProperty.getJwtSecret())
+                    .parseClaimsJws(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public Authentication authentication(String token) {
         Claims body = getJws(token).getBody();
 

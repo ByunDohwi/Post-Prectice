@@ -9,6 +9,7 @@ import org.example.bebyundohwi.week1.domain.user.exception.UserNotFoundException
 import org.example.bebyundohwi.week1.domain.user.repository.UserRepository;
 import org.example.bebyundohwi.week1.global.security.jwt.JwtTokenProvider;
 import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

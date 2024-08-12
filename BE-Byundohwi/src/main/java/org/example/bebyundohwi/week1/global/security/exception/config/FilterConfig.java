@@ -1,4 +1,4 @@
-package org.example.bebyundohwi.week1.global.security.config;
+package org.example.bebyundohwi.week1.global.security.exception.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
