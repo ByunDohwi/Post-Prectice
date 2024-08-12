@@ -2,10 +2,13 @@ package org.example.bebyundohwi.week1.domain.user.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ResponseHeader;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserLoginRequest;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserSignupRequest;
 import org.example.bebyundohwi.week1.domain.user.service.UserLoginService;
+import org.example.bebyundohwi.week1.domain.user.service.UserReissueService;
 import org.example.bebyundohwi.week1.domain.user.service.UserSignupService;
 import org.example.bebyundohwi.week1.domain.user.service.AccountIdDuplicateService;
 import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
@@ -39,9 +42,12 @@ public class UserController {
     }
 
     @PostMapping("/reissue")
-    public TokenResponse reissue() {
-        return userReissueService.reissue();
+    public TokenResponse reissue(@RequestHeader(name = "refresh-token") String token) {
+        return userReissueService.reissue(token);
     }
 
-
+    @GetMapping("/haha")
+    public String haha(){
+        return "haha";
+    }
 }

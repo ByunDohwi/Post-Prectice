@@ -8,7 +8,7 @@ import java.util.Collection;
 
 @AllArgsConstructor
 public class AuthDetails implements UserDetails {
-    private final String accountId;
+    private final String username;
     private static final String ROLE_USER = "ROLE_USER";
 
     @Override
@@ -43,6 +43,6 @@ public class AuthDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return accountId;
+        return username;
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
 public class ExceptionFilter extends OncePerRequestFilter {
@@ -34,6 +35,7 @@ public class ExceptionFilter extends OncePerRequestFilter {
         ErrorResponseEntity errorResponse = ErrorResponseEntity.builder()
                 .message(errorCode.getMessage())
                 .status(errorCode.getHttpStatus())
+                .createLocalDateTime(LocalDateTime.now())
                 .build();
         String errorResponseJson = objectMapper.writeValueAsString(errorResponse);
 

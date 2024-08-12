@@ -7,7 +7,6 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorCode {
 
-
     USER_ALREADY_EXISTS(409, "Username Already Exists"),
     USER_NOT_FOUND(404,"존재하지 않는 유저입니다. "),
     PASSWORD_MISMATCH(401,"Password MisMatch"),
@@ -17,6 +16,6 @@ public enum ErrorCode {
     EXPIRED_TOKEN(401, "Expired Token"),
     INTERNAL_SERVER_ERROR(500,"Internal Server Error");
 
-    private final Integer httpStatus;
-    private final String message;
+    private Integer httpStatus;
+    private String message;
 }

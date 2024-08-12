@@ -20,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 
 @Component
@@ -71,6 +72,8 @@ public class JwtTokenProvider {
     }
 
     public boolean validToken(String token) {
+        //return  (LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli() > getJws(token).getBody().getExpiration().getTime());
+        //return LocalDateTime.now().isAfter((LocalDateTime)(getJws(token).getBody().get("exp")));
         try {
             Jwts.parser()
                     .setSigningKey(jwtProperty.getJwtSecret())

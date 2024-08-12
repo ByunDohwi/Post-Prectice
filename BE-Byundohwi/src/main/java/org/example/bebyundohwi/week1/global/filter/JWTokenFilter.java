@@ -26,6 +26,7 @@ public class JWTokenFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
             else{
+                System.out.println("asdf");
                 throw InvalidTokenException.EXCEPTION;
             }
         }
