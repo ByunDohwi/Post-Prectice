@@ -15,6 +15,6 @@ public class AuthDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity user = userFacade.getUserByUserName(username);
-        return new AuthDetails(user.getUsername());
+        return new AuthDetails(user);
     }
 }

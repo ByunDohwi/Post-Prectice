@@ -1,15 +1,18 @@
 package org.example.bebyundohwi.week1.global.security.auth;
 
 import lombok.AllArgsConstructor;
+import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @AllArgsConstructor
 public class AuthDetails implements UserDetails {
-    private final String username;
-    private static final String ROLE_USER = "ROLE_USER";
+    private final UserEntity user;
 
     @Override
     public boolean isAccountNonExpired() {
@@ -33,7 +36,9 @@ public class AuthDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority(user.getRole()));
+        return authorities;
     }
 
     @Override
@@ -43,6 +48,6 @@ public class AuthDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return username;
+        return user.getUsername();
     }
 }

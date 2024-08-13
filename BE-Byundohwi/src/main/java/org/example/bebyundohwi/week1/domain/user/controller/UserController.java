@@ -48,6 +48,6 @@ public class UserController {
 
     @GetMapping("/haha")
     public String haha(){
-        return "haha";
+        return "Hello user";
     }
 }

@@ -29,7 +29,7 @@ public class UserEntity {
     private String email;
 
     @Column(nullable = false)
-    private Role role;
+    private String role;
     private String address;
     private String phone;
     private String createDate;

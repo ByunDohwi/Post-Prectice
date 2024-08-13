@@ -19,12 +19,14 @@ public class UserReissueService {
     private final RefreshTokenRepository refreshTokenRepository;
     private final JwtTokenProvider jwtTokenProvider;
     private final UserRepository userRepository;
+    private final JwtProperty jwtProperty;
 
     public TokenResponse reissue(String token) {
-        if(jwtTokenProvider.validToken(token)){
+        boolean isTokenInvalid = !jwtTokenProvider.validToken(token);
+        if(isTokenInvalid){
                 throw new RuntimeException("여긴가제발");
         }
-        RefreshToken refreshToken = refreshTokenRepository.findByToken(token).orElseThrow(()->new RuntimeException("강강술래"));
+        RefreshToken refreshToken = refreshTokenRepository.findByToken(token).orElseThrow(()->new RuntimeException("존재하지 않는 토큰"));
         UserEntity user = userRepository.findByUsername(refreshToken.getUsername()).orElseThrow();
         return jwtTokenProvider.generateToken(user.getUsername(),user.getRole().toString());
     }

@@ -18,7 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import static org.example.bebyundohwi.week1.domain.user.domain.role.Role.ADMIN;
+
 
 @Configuration
 @EnableWebSecurity
@@ -43,6 +43,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->
                         auth
                                 .requestMatchers("/user/signup","/user/duplicate/","/user/login","/user/reissue").permitAll()
+                                .requestMatchers("/user/haha").hasRole("USER")
                                 .anyRequest().authenticated()
                 )
                  .addFilterBefore(new JWTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
