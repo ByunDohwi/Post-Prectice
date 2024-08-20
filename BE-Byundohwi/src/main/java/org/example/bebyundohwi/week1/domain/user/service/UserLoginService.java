@@ -27,7 +27,7 @@ public class UserLoginService {
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-        return jwtTokenProvider.generateToken(request.getUsername(), user.getRole().toString());
+        return jwtTokenProvider.generateToken(request.getUsername(), user.getRole());
     }
 
 }

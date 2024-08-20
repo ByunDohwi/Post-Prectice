@@ -11,6 +11,7 @@ public enum ErrorCode {
     USER_NOT_FOUND(404,"존재하지 않는 유저입니다. "),
     PASSWORD_MISMATCH(401,"Password MisMatch"),
     ACCOUNTED_ALREADY_EXISTS(409, "AccountId Already Exists"),
+    ADMIN_NOT_FOUND(404,"존재하지 않는 관리자입니다."),
 
     INVALID_TOKEN(401,"Invalid Token."),
     EXPIRED_TOKEN(401, "Expired Token"),
