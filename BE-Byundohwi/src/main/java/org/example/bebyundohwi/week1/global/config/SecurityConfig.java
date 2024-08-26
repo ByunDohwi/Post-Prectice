@@ -36,19 +36,20 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception {
-         http
+        http
                 .csrf(CsrfConfigurer::disable)
                 .cors(CorsConfigurer::disable)
-                .sessionManagement(configurer->configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers("/users/signup","/users/duplicate/","/users/login","/users/reissue","admin/signup").permitAll()
+                                .requestMatchers("/users/signup", "/users/duplicate/", "/users/login", "/users/reissue", "admin/signup","admin/login").permitAll()
                                 .requestMatchers("/users/haha").hasRole("USER")
                                 .anyRequest().authenticated()
                 )
                  .addFilterBefore(new JWTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
                  .addFilterBefore(new ExceptionFilter(objectMapper), JWTokenFilter.class);
+
 
          return http.build();
     }
