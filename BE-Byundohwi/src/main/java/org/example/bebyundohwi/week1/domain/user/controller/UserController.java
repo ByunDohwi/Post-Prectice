@@ -15,7 +15,7 @@ import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 @Api(tags = {"user에 관련된 회원가입과 ID중복 체크를 제공하는 Controller"})
 public class UserController {

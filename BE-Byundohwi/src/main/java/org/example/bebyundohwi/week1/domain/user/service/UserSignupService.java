@@ -1,9 +1,8 @@
 package org.example.bebyundohwi.week1.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.bebyundohwi.week1.domain.user.domain.role.Role;
+import org.example.bebyundohwi.week1.global.security.role.Role;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserLoginRequest;
-import org.example.bebyundohwi.week1.domain.user.exception.UserNameAlreadyExistException;
 import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserSignupRequest;
 import org.example.bebyundohwi.week1.domain.user.repository.UserRepository;
@@ -38,7 +37,7 @@ public class UserSignupService {
                 repository.save(
                         UserEntity.builder()
                                 .password(passwordEncoder.encode(userSignupRequest.getPassword()))
-                                .createDate((LocalDateTime.now()).format(DateTimeFormatter.ofPattern("yyyy.MM.dd")))
+                                .date((LocalDateTime.now()).format(DateTimeFormatter.ofPattern("yyyy.MM.dd")))
                                 .email(userSignupRequest.getEmail())
                                 .address(userSignupRequest.getAddress())
                                 .phone(userSignupRequest.getPhone())

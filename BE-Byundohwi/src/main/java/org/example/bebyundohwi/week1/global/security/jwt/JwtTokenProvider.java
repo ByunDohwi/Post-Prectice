@@ -4,9 +4,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.example.bebyundohwi.week1.domain.user.domain.role.Role;
+import org.example.bebyundohwi.week1.global.security.role.Role;
 import org.example.bebyundohwi.week1.global.security.auth.AdminDetailService;
-import org.example.bebyundohwi.week1.global.security.auth.AuthDetails;
 import org.example.bebyundohwi.week1.global.security.auth.AuthDetailsService;
 import org.example.bebyundohwi.week1.global.security.exception.InvalidTokenException;
 import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
@@ -22,7 +21,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Date;
 
 @Component

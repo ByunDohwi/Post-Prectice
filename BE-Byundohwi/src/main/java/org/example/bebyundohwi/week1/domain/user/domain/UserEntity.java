@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.bebyundohwi.week1.domain.user.domain.role.Role;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -32,7 +29,7 @@ public class UserEntity {
     private String role;
     private String address;
     private String phone;
-    private String createDate;
+    private String date;
 
 
 }
