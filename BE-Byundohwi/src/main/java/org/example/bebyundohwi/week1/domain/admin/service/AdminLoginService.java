@@ -19,7 +19,7 @@ public class AdminLoginService {
     private final JwtTokenProvider jwtTokenProvider;
     public TokenResponse login(AdminSignupRequest request) {
         AdminEntity admin = adminRepository.findByAdminName(request.getAdminName()).orElseThrow(() -> UserNotFoundException.EXCEPTION);
-        if (!passwordEncoder.matches(admin.getPassword(), request.getPassword())) {
+        if (passwordEncoder.matches(admin.getPassword(), request.getPassword())) {
             return jwtTokenProvider.generateToken(request.getAdminName(), admin.getRole());
         }
         else {

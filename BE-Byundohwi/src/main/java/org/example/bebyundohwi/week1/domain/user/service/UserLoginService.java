@@ -21,11 +21,12 @@ public class UserLoginService {
     public TokenResponse login(UserLoginRequest request) {
         UserEntity user = userRepository.findByUsername(request.getUsername()).orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
-        if(passwordEncoder.matches(user.getPassword(), request.getPassword())){
+        if(!passwordEncoder.matches(user.getPassword(), request.getPassword())){
+            return jwtTokenProvider.generateToken(request.getUsername(), user.getRole());
+        } else{
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-        return jwtTokenProvider.generateToken(request.getUsername(), user.getRole());
     }
 
 }
