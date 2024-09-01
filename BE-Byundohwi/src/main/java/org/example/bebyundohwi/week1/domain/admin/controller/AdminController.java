@@ -1,10 +1,12 @@
 package org.example.bebyundohwi.week1.domain.admin.controller;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.admin.dto.request.AdminSignupRequest;
 import org.example.bebyundohwi.week1.domain.admin.service.AdminLoginService;
 import org.example.bebyundohwi.week1.domain.admin.service.AdminSignupService;
 import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
     private final AdminSignupService adminSignupService;
     private final AdminLoginService adminLoginService;
+    private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/signup")
     public void signup(@RequestBody AdminSignupRequest request) {
