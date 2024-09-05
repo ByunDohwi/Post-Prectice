@@ -27,7 +27,7 @@ public class ExceptionFilter extends OncePerRequestFilter {
             sendErrorMessage(response, e.getErrorCode());
         } catch (Exception e) {
             logger.error(e);
-            sendErrorMessage(response,ErrorCode.USER_NOT_FOUND);
+            sendErrorMessage(response,ErrorCode.INTERNAL_SERVER_ERROR);
         }
     }
 

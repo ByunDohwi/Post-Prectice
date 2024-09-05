@@ -37,14 +37,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception {
         http
-                .csrf(CsrfConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable)
                 .cors(CorsConfigurer::disable)
                 .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .authorizeHttpRequests(auth ->
                         auth
                                 .requestMatchers("/users/signup", "/users/duplicate/", "/users/login", "/users/reissue", "admin/signup","admin/login").permitAll()
-                                .requestMatchers("/users/haha").hasRole("USER")
+                                .requestMatchers("users/haha").hasAuthority("ROLE_ADMIN")
                                 .anyRequest().authenticated()
                 )
                  .addFilterBefore(new JWTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)

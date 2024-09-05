@@ -31,7 +31,6 @@ public class UserSignupService {
     @Transactional
     public void userSave(UserSignupRequest userSignupRequest) {
         Boolean checkAlreadyUserName = repository.existsByUsername(userSignupRequest.getUsername());
-
         if (!checkAlreadyUserName) {
             {
                 repository.save(

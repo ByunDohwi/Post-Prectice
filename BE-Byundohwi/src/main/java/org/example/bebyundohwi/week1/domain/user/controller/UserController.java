@@ -7,11 +7,13 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserLoginRequest;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserSignupRequest;
+import org.example.bebyundohwi.week1.domain.user.facade.UserFacade;
 import org.example.bebyundohwi.week1.domain.user.service.UserLoginService;
 import org.example.bebyundohwi.week1.domain.user.service.UserReissueService;
 import org.example.bebyundohwi.week1.domain.user.service.UserSignupService;
 import org.example.bebyundohwi.week1.domain.user.service.AccountIdDuplicateService;
 import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,6 +25,7 @@ public class UserController {
     private final UserLoginService userLoginService;
     private final AccountIdDuplicateService accountIdDuplicateService;
     private final UserReissueService userReissueService;
+    private final UserFacade userFacade;
 
     @PostMapping("/signup")
     @ApiOperation(value = "회원가입")
@@ -49,5 +52,10 @@ public class UserController {
     @GetMapping("/haha")
     public String haha(){
         return "Hello user";
+    }
+
+    @GetMapping("sayMyName")
+    public String sayName() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 }
