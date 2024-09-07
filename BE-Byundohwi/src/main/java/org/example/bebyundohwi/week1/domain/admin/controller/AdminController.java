@@ -5,9 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.admin.dto.request.AdminSignupRequest;
 import org.example.bebyundohwi.week1.domain.admin.service.AdminLoginService;
 import org.example.bebyundohwi.week1.domain.admin.service.AdminSignupService;
-import org.example.bebyundohwi.week1.domain.post.dto.request.PostCreateRequest;
-import org.example.bebyundohwi.week1.domain.post.service.PostCreateService;
 import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,4 +27,8 @@ public class AdminController {
         return adminLoginService.login(request);
     }
 
+    @GetMapping("/sayMyName")
+    public String sayMyName() {
+        return "Hello" + SecurityContextHolder.getContext().getAuthentication().getName();
+    }
 }
