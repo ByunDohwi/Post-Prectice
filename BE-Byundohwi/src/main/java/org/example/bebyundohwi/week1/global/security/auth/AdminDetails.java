@@ -1,20 +1,25 @@
 package org.example.bebyundohwi.week1.global.security.auth;
 
 import lombok.AllArgsConstructor;
+import org.example.bebyundohwi.week1.domain.admin.entity.AdminEntity;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @AllArgsConstructor
 public class AdminDetails implements UserDetails {
-    private final String adminName;
+    private final AdminEntity admin;
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority(admin.getRole()));
+        return authorities;    }
 
     @Override
     public String getPassword() {
@@ -23,7 +28,7 @@ public class AdminDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return adminName;
+        return admin.getAdminName();
     }
 
     @Override
