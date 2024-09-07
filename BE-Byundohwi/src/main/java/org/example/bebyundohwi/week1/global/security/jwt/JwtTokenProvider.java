@@ -105,9 +105,12 @@ public class JwtTokenProvider {
     }
 
     private UserDetails getDetails(Claims body) {
-        if (body.get("role").equals(Role.USER.toString())) {
+        if (body.get("role").equals(Role.USER.getRole())) {
+            System.out.println(Role.USER.getRole());
+            System.out.println(body.get("role"));
             return authDetailsService.loadUserByUsername(body.getSubject());
         }else{
+            System.out.println(body.get("role"));
             return adminDetailService.loadUserByUsername(body.getSubject());
         }
     }
