@@ -16,7 +16,6 @@ public class PostController {
 
     @PostMapping("/create")
     public void create(@RequestBody PostCreateRequest request) {
-        System.out.println("yuio");
         postCreateService.createPost(request);
     }
 }
