@@ -107,8 +107,12 @@ public class JwtTokenProvider {
     private UserDetails getDetails(Claims body) {
         if (body.get("role").equals(Role.USER.toString())) {
             return authDetailsService.loadUserByUsername(body.getSubject());
-        }else{
+
+        } else if (body.get("role").equals(Role.ADMIN.toString())) {
+
             return adminDetailService.loadUserByUsername(body.getSubject());
         }
+        System.out.println("존재하지 않는 롤. jwtProvider.getDetails");
+        return null;
     }
 }

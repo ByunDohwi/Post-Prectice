@@ -40,7 +40,7 @@ public class UserSignupService {
                                 .email(userSignupRequest.getEmail())
                                 .address(userSignupRequest.getAddress())
                                 .phone(userSignupRequest.getPhone())
-                                .role(Role.USER.getRole())
+                                .role(Role.USER)
                                 .username(userSignupRequest.getUsername())
                                 .build()
                 );
