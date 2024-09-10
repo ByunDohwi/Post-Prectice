@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.admin.dto.request.AdminSignupRequest;
 import org.example.bebyundohwi.week1.domain.admin.entity.AdminEntity;
 import org.example.bebyundohwi.week1.domain.admin.repository.AdminRepository;
-import org.example.bebyundohwi.week1.global.security.role.Role;
+import org.example.bebyundohwi.week1.global.exception.security.role.Role;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

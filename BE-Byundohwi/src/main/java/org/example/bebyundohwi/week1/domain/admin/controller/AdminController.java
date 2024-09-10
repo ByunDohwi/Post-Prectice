@@ -1,13 +1,11 @@
 package org.example.bebyundohwi.week1.domain.admin.controller;
 
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.admin.dto.request.AdminSignupRequest;
 import org.example.bebyundohwi.week1.domain.admin.service.AdminLoginService;
 import org.example.bebyundohwi.week1.domain.admin.service.AdminSignupService;
-import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.dto.TokenResponse;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

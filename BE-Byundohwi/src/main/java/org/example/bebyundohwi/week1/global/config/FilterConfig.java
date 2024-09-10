@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.global.filter.ExceptionFilter;
 import org.example.bebyundohwi.week1.global.filter.JWTokenFilter;
-import org.example.bebyundohwi.week1.global.security.jwt.JwtTokenProvider;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.JwtTokenProvider;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.DefaultSecurityFilterChain;

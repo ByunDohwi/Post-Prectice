@@ -1,12 +1,12 @@
 package org.example.bebyundohwi.week1.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.bebyundohwi.week1.global.security.role.Role;
+import org.example.bebyundohwi.week1.global.exception.security.role.Role;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserLoginRequest;
 import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserSignupRequest;
 import org.example.bebyundohwi.week1.domain.user.repository.UserRepository;
-import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.dto.TokenResponse;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

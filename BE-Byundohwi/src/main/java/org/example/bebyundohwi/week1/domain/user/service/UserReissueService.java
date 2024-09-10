@@ -2,15 +2,13 @@ package org.example.bebyundohwi.week1.domain.user.service;
 
 
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
 import org.example.bebyundohwi.week1.domain.user.repository.UserRepository;
-import org.example.bebyundohwi.week1.global.security.exception.InvalidTokenException;
-import org.example.bebyundohwi.week1.global.security.jwt.JwtProperty;
-import org.example.bebyundohwi.week1.global.security.jwt.JwtTokenProvider;
-import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
-import org.example.bebyundohwi.week1.global.security.jwt.refresh.RefreshTokenRepository;
-import org.example.bebyundohwi.week1.global.security.jwt.refresh.domain.RefreshToken;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.JwtProperty;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.JwtTokenProvider;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.dto.TokenResponse;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.refresh.RefreshTokenRepository;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.refresh.domain.RefreshToken;
 import org.springframework.stereotype.Service;
 
 @Service
