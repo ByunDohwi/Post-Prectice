@@ -20,7 +20,7 @@ public class AdminSignupService {
         AdminEntity admin = AdminEntity.builder()
                 .adminName(request.getAdminName())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.ADMIN.getRole())
+                .role(Role.ADMIN)
                 .build();
 
         adminRepository.save(admin);
