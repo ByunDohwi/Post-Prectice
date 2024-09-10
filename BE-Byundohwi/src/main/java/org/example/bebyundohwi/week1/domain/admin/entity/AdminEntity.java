@@ -5,13 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.bebyundohwi.week1.global.security.role.Role;
 
 @Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Table(name = "tbl_dminEntity")
+@Table(name = "tbl_admin")
 public class AdminEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +25,8 @@ public class AdminEntity {
     private String password;
 
     @Column(nullable = false)
-    String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
 
 }
