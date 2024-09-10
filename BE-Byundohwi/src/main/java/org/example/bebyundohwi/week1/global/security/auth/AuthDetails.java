@@ -2,7 +2,6 @@ package org.example.bebyundohwi.week1.global.security.auth;
 
 import lombok.AllArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
-import org.example.bebyundohwi.week1.global.security.role.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

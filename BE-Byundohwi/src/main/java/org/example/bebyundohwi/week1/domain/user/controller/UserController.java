@@ -2,8 +2,6 @@ package org.example.bebyundohwi.week1.domain.user.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ResponseHeader;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserLoginRequest;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserSignupRequest;
