@@ -1,4 +1,4 @@
-package org.example.bebyundohwi.week1.global.exception.security.jwt.refresh.domain;
+package org.example.bebyundohwi.week1.global.security.jwt.refresh.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

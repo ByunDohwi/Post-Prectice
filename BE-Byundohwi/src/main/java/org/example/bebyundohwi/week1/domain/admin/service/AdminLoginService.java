@@ -6,9 +6,9 @@ import org.example.bebyundohwi.week1.domain.admin.entity.AdminEntity;
 import org.example.bebyundohwi.week1.domain.admin.exception.AdminMissMatchException;
 import org.example.bebyundohwi.week1.domain.admin.repository.AdminRepository;
 import org.example.bebyundohwi.week1.domain.user.exception.UserNotFoundException;
-import org.example.bebyundohwi.week1.global.exception.security.jwt.JwtTokenProvider;
-import org.example.bebyundohwi.week1.global.exception.security.jwt.dto.TokenResponse;
-import org.example.bebyundohwi.week1.global.exception.security.role.Role;
+import org.example.bebyundohwi.week1.global.security.jwt.JwtTokenProvider;
+import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
+import org.example.bebyundohwi.week1.global.security.role.Role;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

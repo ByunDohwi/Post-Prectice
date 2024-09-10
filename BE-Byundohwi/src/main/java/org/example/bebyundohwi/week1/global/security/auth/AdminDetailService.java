@@ -1,4 +1,4 @@
-package org.example.bebyundohwi.week1.global.exception.security.auth;
+package org.example.bebyundohwi.week1.global.security.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.admin.entity.AdminEntity;

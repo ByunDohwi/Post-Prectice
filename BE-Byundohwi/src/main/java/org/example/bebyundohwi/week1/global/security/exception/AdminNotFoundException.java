@@ -1,4 +1,4 @@
-package org.example.bebyundohwi.week1.global.exception.security.exception;
+package org.example.bebyundohwi.week1.global.security.exception;
 
 import org.example.bebyundohwi.week1.global.error.ErrorCode;
 import org.example.bebyundohwi.week1.global.exception.CustomException;

@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.bebyundohwi.week1.global.exception.security.role.Role;
+import org.example.bebyundohwi.week1.global.security.role.Role;
 
 @Entity
 @Builder

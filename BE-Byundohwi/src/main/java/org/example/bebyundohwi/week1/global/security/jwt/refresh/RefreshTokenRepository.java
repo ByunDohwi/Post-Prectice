@@ -1,7 +1,7 @@
-package org.example.bebyundohwi.week1.global.exception.security.jwt.refresh;
+package org.example.bebyundohwi.week1.global.security.jwt.refresh;
 
 
-import org.example.bebyundohwi.week1.global.exception.security.jwt.refresh.domain.RefreshToken;
+import org.example.bebyundohwi.week1.global.security.jwt.refresh.domain.RefreshToken;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

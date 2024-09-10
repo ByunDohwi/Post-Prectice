@@ -10,7 +10,7 @@ import org.example.bebyundohwi.week1.domain.user.service.UserLoginService;
 import org.example.bebyundohwi.week1.domain.user.service.UserReissueService;
 import org.example.bebyundohwi.week1.domain.user.service.UserSignupService;
 import org.example.bebyundohwi.week1.domain.user.service.AccountIdDuplicateService;
-import org.example.bebyundohwi.week1.global.exception.security.jwt.dto.TokenResponse;
+import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 

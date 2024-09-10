@@ -1,4 +1,4 @@
-package org.example.bebyundohwi.week1.global.exception.security.jwt.dto;
+package org.example.bebyundohwi.week1.global.security.jwt.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

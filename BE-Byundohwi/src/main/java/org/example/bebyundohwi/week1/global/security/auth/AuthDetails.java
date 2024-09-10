@@ -1,4 +1,4 @@
-package org.example.bebyundohwi.week1.global.exception.security.auth;
+package org.example.bebyundohwi.week1.global.security.auth;
 
 import lombok.AllArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
