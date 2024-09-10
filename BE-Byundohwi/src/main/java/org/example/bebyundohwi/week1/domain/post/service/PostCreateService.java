@@ -6,6 +6,7 @@ import org.example.bebyundohwi.week1.domain.post.dto.request.PostCreateRequest;
 import org.example.bebyundohwi.week1.domain.post.repository.PostRepository;
 import org.example.bebyundohwi.week1.domain.user.facade.UserFacade;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -15,6 +16,7 @@ public class PostCreateService {
     private final PostRepository postRepository;
     private final UserFacade userFacade;
 
+    @Transactional
     public void createPost(PostCreateRequest request) {
         System.out.println("asdf");
         PostEntity post = PostEntity.builder()
