@@ -1,16 +1,16 @@
-package org.example.bebyundohwi.week1.global.security.jwt;
+package org.example.bebyundohwi.week1.global.exception.security.jwt;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.example.bebyundohwi.week1.global.security.role.Role;
-import org.example.bebyundohwi.week1.global.security.auth.AdminDetailService;
-import org.example.bebyundohwi.week1.global.security.auth.AuthDetailsService;
-import org.example.bebyundohwi.week1.global.security.exception.InvalidTokenException;
-import org.example.bebyundohwi.week1.global.security.jwt.dto.TokenResponse;
-import org.example.bebyundohwi.week1.global.security.jwt.refresh.RefreshTokenRepository;
-import org.example.bebyundohwi.week1.global.security.jwt.refresh.domain.RefreshToken;
+import org.example.bebyundohwi.week1.global.exception.security.auth.AdminDetailService;
+import org.example.bebyundohwi.week1.global.exception.security.auth.AuthDetailsService;
+import org.example.bebyundohwi.week1.global.exception.security.exception.InvalidTokenException;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.dto.TokenResponse;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.refresh.RefreshTokenRepository;
+import org.example.bebyundohwi.week1.global.exception.security.jwt.refresh.domain.RefreshToken;
+import org.example.bebyundohwi.week1.global.exception.security.role.Role;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import io.jsonwebtoken.Jws;

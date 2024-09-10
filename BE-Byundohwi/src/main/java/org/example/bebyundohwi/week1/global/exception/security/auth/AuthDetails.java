@@ -1,7 +1,7 @@
-package org.example.bebyundohwi.week1.global.security.auth;
+package org.example.bebyundohwi.week1.global.exception.security.auth;
 
 import lombok.AllArgsConstructor;
-import org.example.bebyundohwi.week1.domain.admin.entity.AdminEntity;
+import org.example.bebyundohwi.week1.domain.user.domain.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,25 +11,8 @@ import java.util.Collection;
 import java.util.List;
 
 @AllArgsConstructor
-public class AdminDetails implements UserDetails {
-    private final AdminEntity admin;
-
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_"+admin.getRole().toString()));
-        return authorities;    }
-
-    @Override
-    public String getPassword() {
-        return null;
-    }
-
-    @Override
-    public String getUsername() {
-        return admin.getAdminName();
-    }
+public class AuthDetails implements UserDetails {
+    private final UserEntity user;
 
     @Override
     public boolean isAccountNonExpired() {
@@ -49,5 +32,22 @@ public class AdminDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_"+user.getRole().toString()));
+        return authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return user.getUsername();
     }
 }
