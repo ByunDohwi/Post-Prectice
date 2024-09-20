@@ -21,3 +21,7 @@ spring:
     prefix: ${PREFIX}
     accessExp: ${ACCESS_EXP}
     refreshExp: ${REFRESH_EXP}
+
+redis:
+  host: ${REDIS_HOST:localhost}
+  port: ${REDIS_PORT:6379}

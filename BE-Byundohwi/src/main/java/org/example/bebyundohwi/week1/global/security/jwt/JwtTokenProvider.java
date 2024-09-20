@@ -42,7 +42,8 @@ public class JwtTokenProvider {
 
         refreshTokenRepository.save(
                 RefreshToken.builder()
-                        .username(id)
+                        .id(id)
+                        .ttl(jwtProperty.getRefreshExp()*1000)
                         .token(refreshToken)
                         .build()
         );

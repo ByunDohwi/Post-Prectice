@@ -25,7 +25,8 @@ public class UserReissueService {
                 throw new RuntimeException("여긴가제발");
         }
         RefreshToken refreshToken = refreshTokenRepository.findByToken(token).orElseThrow(()->new RuntimeException("존재하지 않는 토큰"));
-        UserEntity user = userRepository.findByUsername(refreshToken.getUsername()).orElseThrow();
+        System.out.println(refreshToken.getId());
+        UserEntity user = userRepository.findByUsername(refreshToken.getId()).orElseThrow();
         return jwtTokenProvider.generateToken(user.getUsername(),user.getRole().toString());
     }
 }
