@@ -45,6 +45,7 @@ public class SecurityConfig {
                                 .requestMatchers("users/haha","users/sayMyName").hasRole("USER")
                                 .requestMatchers("/admin/sayMyName").hasRole("ADMIN")
                                 .requestMatchers("users/post/**","admin/post/**").authenticated()
+                                .anyRequest().permitAll()
                 )
                  .addFilterBefore(new JWTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
                  .addFilterBefore(new ExceptionFilter(objectMapper), JWTokenFilter.class);
