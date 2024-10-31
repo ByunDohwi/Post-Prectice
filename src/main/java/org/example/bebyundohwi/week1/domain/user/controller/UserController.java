@@ -1,7 +1,8 @@
 package org.example.bebyundohwi.week1.domain.user.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserLoginRequest;
 import org.example.bebyundohwi.week1.domain.user.dto.request.UserSignupRequest;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-@Api(tags = {"user에 관련된 회원가입과 ID중복 체크를 제공하는 Controller"})
+@Tag(name = "user controller", description = "user 관련 api")
 public class UserController {
     private final UserSignupService userSignupService;
     private final UserLoginService userLoginService;
@@ -26,7 +27,7 @@ public class UserController {
     private final UserFacade userFacade;
 
     @PostMapping("/signup")
-    @ApiOperation(value = "회원가입")
+    @Operation(description = "회원가입")
     public TokenResponse signup(@RequestBody UserSignupRequest userSignupRequest) {
         return userSignupService.userSignUpService(userSignupRequest);
     }
@@ -37,7 +38,6 @@ public class UserController {
     }
 
     @GetMapping("/duplicate/{accountId}")
-    @ApiOperation(value = "ID중복확인")
     public void accountIdDuplicate(@PathVariable String accountId) {
         accountIdDuplicateService.checkAccountIdDuplicate(accountId);
     }
