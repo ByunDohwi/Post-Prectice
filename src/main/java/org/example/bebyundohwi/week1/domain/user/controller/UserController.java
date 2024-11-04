@@ -52,6 +52,8 @@ public class UserController {
         return "Hello user";
     }
 
+
+
     @GetMapping("sayMyName")
     public String sayName() {
         return SecurityContextHolder.getContext().getAuthentication().getName();
